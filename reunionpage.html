@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<head>
+	<title>2018 Dunbar Green Chatman Registration</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<style>
+
+#counters {
+	color: white;
+}
+</style>
+</head>
+<html>
+<body>
+<div class="container">
+	<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	<div id="registration">
+		<div id="row_1" class="row">
+			
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="upload" value="1">
+			<input type="hidden" name="business" value="rogers.green@live.com">
+			
+			<div id="counters" class="col-sm-12" value="1">
+				<div class="row">
+					<p id="demo" class="col-sm-2">test</p>
+					<div id="count1" class="col-sm-2" type="text" value="1" >1</div>
+					<div id="divtotal" class="col-sm-2" type="text" value="1">1</div>
+					<div id="itemTotal" class="col-sm-3" type="text" value="1">1</div>
+					<div id="items" class="col-sm-3" value="1">item</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<p>Fill out the information below enter the participant's name, select whether the person is an adult, teenager, or child ages are listed in the drowpdowns.  You may also select the T-Shirt sizes.</p>
+				<p>Once you are complete click the "Pay using PayPal" button and this will take you to Paypal site and your totals will appear. When on the Paypal site if you want an itemized list click on the shopping cart with the total cost and then each item will be listed.
+					
+				</p>
+			</div>
+			
+			<div class="col-sm-4">
+				<label>Full Name</label>
+				<input type="hidden" name="item_name_1" value="">
+				<input id="fullname_1" class="form-control" type="text" name="fullname_1" required maxlength="200">
+				<!--4 INPUT-->
+			</div>
+			<div class="col-sm-4">
+				<label>Participant Type</label>
+				<input type="hidden" name="amount_1" value="">
+				<!--5 INPUT-->
+				<select id="participanttype1" class="form-control" name="os0" value="participanttype1">
+					<option value="80.00">Adult (18 & Up) $80.00 USD</option>
+					<option value="20.00">Teenager (13 & Up) $20.00 USD</option>
+					<option value="0.00">Child (12 & Under) $0.00 USD</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label>T-Shirt Size</label>
+				<input type="hidden" name="item_name_2" value="">
+				<!--6 INPUT-->
+				<select id="shirttype_1" class="form-control" name="os1"  value="shirttype_1">
+					<option value="No T-Shirt">No T-Shirt</option>
+					<option value="2T">2T</option>
+					<option value="3T">3T</option>
+					<option value="4T">4T</option>
+					<option value="YS - Youth Smalll">YS - Youth Small </option>
+					<option value="YM - Youth Medium">YM - Youth Medium </option>
+					<option value="YL - Youth Large">YL - Youth Large </option>
+					<option value="YXL - Youth Extra Large">YXL - Youth Extra Large </option>
+					<option value="AS - Adult Small">AS - Adult Small </option>
+					<option value="AM - Adult Medium">AM - Adult Medium </option>
+					<option value="AL - Adult Large">AL - Adult Large </option>
+					<option value="XL - Extra Large">XL - Extra Large </option>
+					<option value="2XL - Extra Large">2XL - Extra Large </option>
+					<option value="3XL - Extra Large">3XL - Extra Large </option>
+					<option value="4XL - Extra Large">4XL - Extra Large </option>
+				</select>
+				<input type="hidden" name="amount_2" value="">
+			</div>
+			<div class="w-100"></div>
+			
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<button class="btn btn-info" type="button" value="Add Participant" onclick="addNewRow()">
+			Add Participant
+			</button>
+		</div>
+		<div class="col-sm-12">
+			<input type="submit" class="btn btn-success form-control" value="Pay using PayPal" onclick="myFunc()">
+		</div>
+	</div>
+	</form>
+</div>
+
+</body>
+<script type="text/javascript">
+
+	function myFunc(){
+		var listCount = document.getElementById("count1").innerHTML;
+		
+	
+		for (i = 0; i < Number(listCount); i++){
+			var i1 = Number(i) * 5;
+			document.getElementById("itemTotal").innerHTML = Number(i1);
+			var itemname1 = document.getElementsByTagName("INPUT")[3+Number(i1)];//8
+			
+			//document.getElementById("itemTotal").innerHTML = itemname1;
+			//var labelElement = document.createElement("LABEL");
+			//var textnode = document.createTextNode(itemname1);
+			//labelElement.appendChild(textnode);
+			//document.getElementById("items").appendChild(labelElement);
+			
+			var amt1 = document.getElementsByTagName("INPUT")[5+Number(i1)];//10
+			var itemname2 = document.getElementsByTagName("INPUT")[6+Number(i1)];	//11		
+			var amt2 = document.getElementsByTagName("INPUT")[7+Number(i1)];//12
+			
+			var fullname = "fullname_" + (Number(i) + 1);
+			var name1 = document.getElementById(fullname).value;
+			var shirttype = document.getElementById("shirttype_"+(Number(i) + 1)).value;
+			var amount1 = document.getElementById("participanttype"+(Number(i) + 1)).value;
+			
+			//Combine participanttype1 with name1
+			switch( amount1 ){
+				case "80.00":
+					name1 += " - Adult";
+					break;
+				case "20.00":
+					name1 += " - Teenager";
+					break;
+				case "0.00":
+					name1 += " - Child";
+					break;
+			}
+			
+			if (shirttype != "No T-Shirt") {
+				amount2 = "10.00";
+			}
+			else {
+				amount2 = "0.00";
+			}
+			
+			itemname1.attributes[2].value = name1;
+			amt1.attributes[2].value = amount1;
+			itemname2.attributes[2].value = shirttype;
+			amt2.attributes[2].value = amount2;
+			var x = amt2.attributes[2].value;
+			document.getElementById("demo").innerHTML = x;
+			
+			
+		}
+		//var itemname1 = document.getElementsByTagName("INPUT")[3];//7
+		//var amt1 = document.getElementsByTagName("INPUT")[5];//9
+		//var itemname2 = document.getElementsByTagName("INPUT")[6];//10
+		//var amt2 = document.getElementsByTagName("INPUT")[7];//11
+		
+		
+		
+		//var amount2 = document.getElementById("participanttype1").value;
+		
+		
+	
+		//var name2 = document.getElementById("fullname2").value;
+		//var x = i.attributes[3].value;
+				
+	}
+	
+	function addNewRow(){
+	// Get row counts
+		var row = document.getElementById("count1").innerHTML;
+		var r = Number(row)+1;
+		document.getElementById("count1").innerHTML = r;
+		
+	// Create new row
+		var rowElement = document.createElement("DIV");
+		var row = "row_" + r;
+		rowElement.setAttribute("id", row);
+		rowElement.setAttribute("class", "row");
+		document.getElementById("registration").appendChild(rowElement);
+		
+		var div = document.getElementById("divtotal").innerHTML;
+		if (div < 3) {
+			var divcount = Number(div) + 1;
+		}
+		else {
+			var divcount = 1;
+		}		
+		document.getElementById("divtotal").innerHTML = divcount;
+		
+		var rowElement = document.createElement("DIV");
+		var div = "div_r" + r + "d1";
+		rowElement.setAttribute("id", div);
+		rowElement.setAttribute("class", "col-sm-3");
+		document.getElementById(row).appendChild(rowElement);
+		
+		var labelElement = document.createElement("LABEL");
+		var textnode = document.createTextNode("Full Name");
+		labelElement.appendChild(textnode);
+		document.getElementById(div).appendChild(labelElement);
+				
+		//<input type="hidden" name="item_name_1" value="">
+		var x = document.createElement("INPUT");
+		var rCount = ((Number(r) * 2) - 1);
+		var item_name = "item_name_" + rCount;
+		x.setAttribute("type", "hidden");
+		x.setAttribute("name", item_name);		
+		x.setAttribute("value", "");
+		document.getElementById(div).appendChild(x);
+		
+		//input id="fullname1" class="form-control" type="text" name="fullname_1" maxlength="200">
+		var x = document.createElement("INPUT");
+		var fullname = "fullname_" + r;
+		x.setAttribute("id", fullname);
+		x.setAttribute("class", "form-control");
+		x.setAttribute("type", "text");
+		x.setAttribute("name", fullname);
+		x.setAttribute("required", "");
+		x.setAttribute("maxlength", "200");
+		document.getElementById(div).appendChild(x);
+
+		var rowElement = document.createElement("DIV");
+		var div = "div_r" + r + "d2";
+		rowElement.setAttribute("id", div);
+		rowElement.setAttribute("class", "col-sm-3");
+		document.getElementById(row).appendChild(rowElement);
+		
+		var labelElement = document.createElement("LABEL");
+		var textnode = document.createTextNode("Participant Type");
+		labelElement.appendChild(textnode);
+		document.getElementById(div).appendChild(labelElement);		
+		
+		//<input type="hidden" name="amount_1" value="">
+		var x = document.createElement("INPUT");
+		var amount = "amount_" + ((Number(r) * 2) - 1);
+		x.setAttribute("type", "hidden");
+		x.setAttribute("name", amount);
+		x.setAttribute("value", "0.00");
+		document.getElementById(div).appendChild(x);
+		
+		
+//************************************************************************************************//
+//**SELECT TAG                                                //
+		var x = document.createElement("SELECT");
+		var participanttype = "participanttype" + r;
+		x.setAttribute("id", participanttype);
+		x.setAttribute("class", "form-control");
+		x.setAttribute("name", "os"+(Number(r)+1));
+		x.setAttribute("value", participanttype);
+		document.getElementById(div).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("Adult (18 & Up) $80.00 USD");		
+		x.setAttribute("value", "80.00");
+		x.appendChild(textnode);
+		document.getElementById(participanttype).appendChild(x);			
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("Teenager (13 & Up) $20.00");
+		x.setAttribute("value", "20.00");
+		x.appendChild(textnode);
+		document.getElementById(participanttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("Child (12 & Under) $0.00");
+		x.setAttribute("value", "0.00");
+		x.appendChild(textnode);
+		document.getElementById(participanttype).appendChild(x);		
+//**END SELECT TAG                                              //
+//************************************************************************************************//
+		
+		var rowElement = document.createElement("DIV");
+		var div = "div_r" + r + "d3";
+		rowElement.setAttribute("id", div);
+		rowElement.setAttribute("class", "col-sm-3");
+		document.getElementById(row).appendChild(rowElement);
+
+		//<label>T-Shirt Size</label>
+		var x = document.createElement("LABEL");
+		var textnode = document.createTextNode("T-Shirt Size");
+		x.appendChild(textnode);
+		document.getElementById(div).appendChild(x);
+		
+		var shirtHiddenElement = document.createElement("INPUT");
+		var rCount = Number(r) * 2;
+		var amount = "item_name_" + Number(rCount);
+		shirtHiddenElement.setAttribute("type", "hidden");
+		shirtHiddenElement.setAttribute("name", amount);
+		shirtHiddenElement.setAttribute("value", "0.00");
+		document.getElementById(div).appendChild(shirtHiddenElement);
+
+//************************************************************************************************//
+//**SELECT TAG (T-Shirt Sizes)
+		var shirtElement = document.createElement("SELECT");
+		var shirttype = "shirttype_" + r;
+		shirtElement.setAttribute("id", shirttype);
+		shirtElement.setAttribute("class", "form-control");
+		shirtElement.setAttribute("name", "os"+(Number(r)+1));
+		shirtElement.setAttribute("value", shirttype);
+		document.getElementById(div).appendChild(shirtElement);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("No T-Shirt");		
+		x.setAttribute("value", "No T-Shirt");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("2T");		
+		x.setAttribute("value", "2T");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("3T");		
+		x.setAttribute("value", "3T");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("4T");		
+		x.setAttribute("value", "4T");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("YS - Youth Small");		
+		x.setAttribute("value", "YS - Youth Small");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("YM - Youth Medium");		
+		x.setAttribute("value", "YM - Youth Medium");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("YL - Youth Large");		
+		x.setAttribute("value", "YL - Youth Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("YXL - Youth Extra Large");		
+		x.setAttribute("value", "YXL - Youth Extra Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("AS - Adult Small");		
+		x.setAttribute("value", "AS - Adult Small");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("AM - Adult Medium");		
+		x.setAttribute("value", "AM - Adult Medium");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("AL - Adult Large");		
+		x.setAttribute("value", "AL - Adult Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("XL - Extra Large");		
+		x.setAttribute("value", "XL - Extra Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("2XL - Extra Large");		
+		x.setAttribute("value", "2XL - Extra Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("3XL - Extra Large");		
+		x.setAttribute("value", "3XL - Extra Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		var x = document.createElement("OPTION");
+		var textnode = document.createTextNode("4XL - Extra Large");		
+		x.setAttribute("value", "3XL - Extra Large");
+		x.appendChild(textnode);
+		document.getElementById(shirttype).appendChild(x);
+		
+		//<input type="hidden" name="amount_2" value="">
+		var x = document.createElement("INPUT");
+		var amount = "amount_" + (Number(r) * 2);
+		x.setAttribute("type", "hidden");
+		x.setAttribute("name", amount);
+		x.setAttribute("value", "0.00");
+		document.getElementById(div).appendChild(x);
+		
+	
+//**END SELECT TAG 
+//************************************************************************************************//
+
+		var rowElement = document.createElement("DIV");
+		var div = "div_r" + r + "d4";
+		rowElement.setAttribute("id", div);
+		rowElement.setAttribute("class", "col-sm-3");
+		document.getElementById(row).appendChild(rowElement);
+		
+		var labelElement = document.createElement("LABEL");
+		var textnode = document.createTextNode("Delete Row");
+		labelElement.appendChild(textnode);
+		labelElement.setAttribute("class", "col-sm-12");
+		document.getElementById(div).appendChild(labelElement);	
+		
+		var buttonElement = document.createElement("BUTTON");
+		var button = "button_" + r;
+		buttonElement.setAttribute("id", button);
+		buttonElement.setAttribute("class", "col-sm-12 btn btn-info form-control");
+		buttonElement.setAttribute("value", "Remove");
+		var textnode = document.createTextNode("Remove");
+		buttonElement.appendChild(textnode);
+		buttonElement.setAttribute("onclick","deleteRow(this)");
+		document.getElementById(div).appendChild(buttonElement);
+	}
+	
+	function deleteRow(control) {
+		alert(control.id)
+		var str = control.id;
+		var len = str.length;
+		var pos = str.indexOf("_");
+		var row = str.substring(pos + 1, len)
+		//alert(row);
+		var parent = document.getElementById("registration");
+		var rowRemove = "row_"+row;
+		var child = document.getElementById(rowRemove);
+		parent.removeChild(child);
+		
+		var listCount = document.getElementById("count1").innerHTML;
+		
+			//var rowNewNumber = "row_"  + Number(row);
+			//document.getElementById("row_4").id = rowNewNumber;
+		
+		
+		// This will reorder the tag item after deletions
+		for(i = Number(row); i < Number(listCount); i++)
+		{
+			
+			var rowNumber = "row_" + (Number(i) + 1);
+			var rowNewNumber = "row_" + Number(i);
+			document.getElementById(rowNumber).id = rowNewNumber;
+			
+			// Column d1
+			var div_rNumberd1 = "div_r" + (Number(i) + 1) + "d1";
+			var div_rNewNumberd1 = "div_r" + Number(i) + "d1";
+			document.getElementById(div_rNumberd1).id = div_rNewNumberd1;			
+			
+			var rowItemName1 = "item_name_" + (((Number(i) + 1) * 2) - 1);
+			var rowNewItemName1 = "item_name_" + ((Number(i) * 2) - 1);
+			document.getElementsByName(rowItemName1)[0].name = rowNewItemName1;
+			
+			var fullName = "fullname_" + (Number(i) + 1);
+			var newFullName = "fullname_" + Number(i);
+			document.getElementById(fullName).id = newFullName;	
+			document.getElementsByName(fullName)[0].name = newFullName;
+			
+			
+			// Column d2
+			var div_rNumberd2 = "div_r" + (Number(i) + 1) + "d2";
+			var div_rNewNumberd2 = "div_r" + Number(i) + "d2";
+			document.getElementById(div_rNumberd2).id = div_rNewNumberd2;
+			
+			var amountName = "amount_" + (((Number(i) + 1) * 2) - 1);
+			var newAmountName = "amount_" + ((Number(i) * 2) - 1);
+			document.getElementsByName(amountName)[0].name = newAmountName;
+			
+			var participanttype = "participanttype" + (Number(i) + 1);
+			var newParticipanttype = "participanttype" + Number(i);
+			document.getElementById(participanttype).id = newParticipanttype;
+			
+			
+			
+			// Column d3
+			var div_rNumberd3 = "div_r" + (Number(i) + 1) + "d3";
+			var div_rNewNumberd3 = "div_r" + Number(i) + "d3";
+			document.getElementById(div_rNumberd3).id = div_rNewNumberd3;
+			
+			var rowItemName2 = "item_name_" + ((Number(i) + 1) * 2);
+			var rowNewItemName2 = "item_name_" + (Number(i) * 2);
+			document.getElementsByName(rowItemName2)[0].name = rowNewItemName2;
+			
+			var shirtType = "shirttype_" + (Number(i) + 1);
+			var newShirtType = "shirttype_" + Number(i);
+			var newOs = "os" + (Number(i) * 2);
+			document.getElementById(shirtType).id = newShirtType;
+			document.getElementById(newShirtType).name = newOs;
+			
+			var amountName = "amount_" + ((Number(i) + 1) * 2);
+			var newAmountName = "amount_" + (Number(i) * 2);
+			document.getElementsByName(amountName)[0].name = newAmountName;
+			
+			
+			// Column d4
+			var div_rNumberd4 = "div_r" + (Number(i) + 1) + "d4";
+			var div_rNewNumberd4 = "div_r" + Number(i) + "d4";
+			document.getElementById(div_rNumberd4).id = div_rNewNumberd4;
+			alert(i + " " + listCount);
+			var button = "button_" + (Number(i) + 1);
+			var newButton = "button_" + Number(i);
+			
+			listCount = (Number(listCount) - 1);
+			document.getElementById("count1").innerHTML = listCount;
+			
+			document.getElementById(button).id = newButton;
+			
+			
+			
+			
+		}
+	}
+
+</script>
+</html> 

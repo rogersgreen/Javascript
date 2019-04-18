@@ -1,0 +1,543 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs32\lang9 Reunion Dues Page javascript code\b0\fs22\par
+\par
+Link to Family Reunion Page to pay dues and collect data, then forward data to PayPal, formatted with Bootstrap\par
+
+\pard\widctlpar {\f1\lang1033{\field{\*\fldinst{HYPERLINK https://sites.google.com/view/reg2018/home?fbclid=IwAR1l280TEtZ-Yjr0p3kTYDsnQe7tYLKm-zRWaTlHJU8IWlY5yn11EjpJiQM }}{\fldrslt{https://sites.google.com/view/reg2018/home?fbclid=IwAR1l280TEtZ-Yjr0p3kTYDsnQe7tYLKm-zRWaTlHJU8IWlY5yn11EjpJiQM\ul0\cf0}}}}\f1\fs22\lang1033\par
+
+\pard\sa200\sl276\slmult1\f0\lang9\par
+\par
+<!DOCTYPE html>\par
+<head>\par
+\tab <title>2018 Dunbar Green Chatman Registration</title>\par
+\tab <meta charset="utf-8">\par
+\tab <meta name="viewport" content="width=device-width, initial-scale=1">\par
+\tab <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">\par
+\tab <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>\par
+\tab <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>\par
+\tab <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>\par
+<style>\par
+\par
+#counters \{\par
+\tab color: white;\par
+\}\par
+</style>\par
+</head>\par
+<html>\par
+<body>\par
+<div class="container">\par
+\tab <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">\par
+\tab <div id="registration">\par
+\tab\tab <div id="row_1" class="row">\par
+\tab\tab\tab\par
+\tab\tab\tab <input type="hidden" name="cmd" value="_cart">\par
+\tab\tab\tab <input type="hidden" name="upload" value="1">\par
+\tab\tab\tab <input type="hidden" name="business" value="rogers.green@live.com">\par
+\tab\tab\tab\par
+\tab\tab\tab <div id="counters" class="col-sm-12" value="1">\par
+\tab\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab\tab <p id="demo" class="col-sm-2">test</p>\par
+\tab\tab\tab\tab\tab <div id="count1" class="col-sm-2" type="text" value="1" >1</div>\par
+\tab\tab\tab\tab\tab <div id="divtotal" class="col-sm-2" type="text" value="1">1</div>\par
+\tab\tab\tab\tab\tab <div id="itemTotal" class="col-sm-3" type="text" value="1">1</div>\par
+\tab\tab\tab\tab\tab <div id="items" class="col-sm-3" value="1">item</div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <div class="col-sm-12">\par
+\tab\tab\tab\tab <p>Fill out the information below enter the participant's name, select whether the person is an adult, teenager, or child ages are listed in the drowpdowns.  You may also select the T-Shirt sizes.</p>\par
+\tab\tab\tab\tab <p>Once you are complete click the "Pay using PayPal" button and this will take you to Paypal site and your totals will appear. When on the Paypal site if you want an itemized list click on the shopping cart with the total cost and then each item will be listed.\par
+\tab\tab\tab\tab\tab\par
+\tab\tab\tab\tab </p>\par
+\tab\tab\tab </div>\par
+\tab\tab\tab\par
+\tab\tab\tab <div class="col-sm-4">\par
+\tab\tab\tab\tab <label>Full Name</label>\par
+\tab\tab\tab\tab <input type="hidden" name="item_name_1" value="">\par
+\tab\tab\tab\tab <input id="fullname_1" class="form-control" type="text" name="fullname_1" required maxlength="200">\par
+\tab\tab\tab\tab <!--4 INPUT-->\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <div class="col-sm-4">\par
+\tab\tab\tab\tab <label>Participant Type</label>\par
+\tab\tab\tab\tab <input type="hidden" name="amount_1" value="">\par
+\tab\tab\tab\tab <!--5 INPUT-->\par
+\tab\tab\tab\tab <select id="participanttype1" class="form-control" name="os0" value="participanttype1">\par
+\tab\tab\tab\tab\tab <option value="80.00">Adult (18 & Up) $80.00 USD</option>\par
+\tab\tab\tab\tab\tab <option value="20.00">Teenager (13 & Up) $20.00 USD</option>\par
+\tab\tab\tab\tab\tab <option value="0.00">Child (12 & Under) $0.00 USD</option>\par
+\tab\tab\tab\tab </select>\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <div class="col-sm-4">\par
+\tab\tab\tab\tab <label>T-Shirt Size</label>\par
+\tab\tab\tab\tab <input type="hidden" name="item_name_2" value="">\par
+\tab\tab\tab\tab <!--6 INPUT-->\par
+\tab\tab\tab\tab <select id="shirttype_1" class="form-control" name="os1"  value="shirttype_1">\par
+\tab\tab\tab\tab\tab <option value="No T-Shirt">No T-Shirt</option>\par
+\tab\tab\tab\tab\tab <option value="2T">2T</option>\par
+\tab\tab\tab\tab\tab <option value="3T">3T</option>\par
+\tab\tab\tab\tab\tab <option value="4T">4T</option>\par
+\tab\tab\tab\tab\tab <option value="YS - Youth Smalll">YS - Youth Small </option>\par
+\tab\tab\tab\tab\tab <option value="YM - Youth Medium">YM - Youth Medium </option>\par
+\tab\tab\tab\tab\tab <option value="YL - Youth Large">YL - Youth Large </option>\par
+\tab\tab\tab\tab\tab <option value="YXL - Youth Extra Large">YXL - Youth Extra Large </option>\par
+\tab\tab\tab\tab\tab <option value="AS - Adult Small">AS - Adult Small </option>\par
+\tab\tab\tab\tab\tab <option value="AM - Adult Medium">AM - Adult Medium </option>\par
+\tab\tab\tab\tab\tab <option value="AL - Adult Large">AL - Adult Large </option>\par
+\tab\tab\tab\tab\tab <option value="XL - Extra Large">XL - Extra Large </option>\par
+\tab\tab\tab\tab\tab <option value="2XL - Extra Large">2XL - Extra Large </option>\par
+\tab\tab\tab\tab\tab <option value="3XL - Extra Large">3XL - Extra Large </option>\par
+\tab\tab\tab\tab\tab <option value="4XL - Extra Large">4XL - Extra Large </option>\par
+\tab\tab\tab\tab </select>\par
+\tab\tab\tab\tab <input type="hidden" name="amount_2" value="">\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <div class="w-100"></div>\par
+\tab\tab\tab\par
+\tab\tab </div>\par
+\tab\tab\par
+\tab </div>\par
+\tab <div class="row">\par
+\tab\tab <div class="col-sm-12">\par
+\tab\tab\tab <button class="btn btn-info" type="button" value="Add Participant" onclick="addNewRow()">\par
+\tab\tab\tab Add Participant\par
+\tab\tab\tab </button>\par
+\tab\tab </div>\par
+\tab\tab <div class="col-sm-12">\par
+\tab\tab\tab <input type="submit" class="btn btn-success form-control" value="Pay using PayPal" onclick="myFunc()">\par
+\tab\tab </div>\par
+\tab </div>\par
+\tab </form>\par
+</div>\par
+\par
+</body>\par
+<script type="text/javascript">\par
+\par
+\tab function myFunc()\{\par
+\tab\tab var listCount = document.getElementById("count1").innerHTML;\par
+\tab\tab\par
+\tab\par
+\tab\tab for (i = 0; i < Number(listCount); i++)\{\par
+\tab\tab\tab var i1 = Number(i) * 5;\par
+\tab\tab\tab document.getElementById("itemTotal").innerHTML = Number(i1);\par
+\tab\tab\tab var itemname1 = document.getElementsByTagName("INPUT")[3+Number(i1)];//8\par
+\tab\tab\tab\par
+\tab\tab\tab //document.getElementById("itemTotal").innerHTML = itemname1;\par
+\tab\tab\tab //var labelElement = document.createElement("LABEL");\par
+\tab\tab\tab //var textnode = document.createTextNode(itemname1);\par
+\tab\tab\tab //labelElement.appendChild(textnode);\par
+\tab\tab\tab //document.getElementById("items").appendChild(labelElement);\par
+\tab\tab\tab\par
+\tab\tab\tab var amt1 = document.getElementsByTagName("INPUT")[5+Number(i1)];//10\par
+\tab\tab\tab var itemname2 = document.getElementsByTagName("INPUT")[6+Number(i1)];\tab //11\tab\tab\par
+\tab\tab\tab var amt2 = document.getElementsByTagName("INPUT")[7+Number(i1)];//12\par
+\tab\tab\tab\par
+\tab\tab\tab var fullname = "fullname_" + (Number(i) + 1);\par
+\tab\tab\tab var name1 = document.getElementById(fullname).value;\par
+\tab\tab\tab var shirttype = document.getElementById("shirttype_"+(Number(i) + 1)).value;\par
+\tab\tab\tab var amount1 = document.getElementById("participanttype"+(Number(i) + 1)).value;\par
+\tab\tab\tab\par
+\tab\tab\tab //Combine participanttype1 with name1\par
+\tab\tab\tab switch( amount1 )\{\par
+\tab\tab\tab\tab case "80.00":\par
+\tab\tab\tab\tab\tab name1 += " - Adult";\par
+\tab\tab\tab\tab\tab break;\par
+\tab\tab\tab\tab case "20.00":\par
+\tab\tab\tab\tab\tab name1 += " - Teenager";\par
+\tab\tab\tab\tab\tab break;\par
+\tab\tab\tab\tab case "0.00":\par
+\tab\tab\tab\tab\tab name1 += " - Child";\par
+\tab\tab\tab\tab\tab break;\par
+\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\tab if (shirttype != "No T-Shirt") \{\par
+\tab\tab\tab\tab amount2 = "10.00";\par
+\tab\tab\tab\}\par
+\tab\tab\tab else \{\par
+\tab\tab\tab\tab amount2 = "0.00";\par
+\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\tab itemname1.attributes[2].value = name1;\par
+\tab\tab\tab amt1.attributes[2].value = amount1;\par
+\tab\tab\tab itemname2.attributes[2].value = shirttype;\par
+\tab\tab\tab amt2.attributes[2].value = amount2;\par
+\tab\tab\tab var x = amt2.attributes[2].value;\par
+\tab\tab\tab document.getElementById("demo").innerHTML = x;\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\}\par
+\tab\tab //var itemname1 = document.getElementsByTagName("INPUT")[3];//7\par
+\tab\tab //var amt1 = document.getElementsByTagName("INPUT")[5];//9\par
+\tab\tab //var itemname2 = document.getElementsByTagName("INPUT")[6];//10\par
+\tab\tab //var amt2 = document.getElementsByTagName("INPUT")[7];//11\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab //var amount2 = document.getElementById("participanttype1").value;\par
+\tab\tab\par
+\tab\tab\par
+\tab\par
+\tab\tab //var name2 = document.getElementById("fullname2").value;\par
+\tab\tab //var x = i.attributes[3].value;\par
+\tab\tab\tab\tab\par
+\tab\}\par
+\tab\par
+\tab function addNewRow()\{\par
+\tab // Get row counts\par
+\tab\tab var row = document.getElementById("count1").innerHTML;\par
+\tab\tab var r = Number(row)+1;\par
+\tab\tab document.getElementById("count1").innerHTML = r;\par
+\tab\tab\par
+\tab // Create new row\par
+\tab\tab var rowElement = document.createElement("DIV");\par
+\tab\tab var row = "row_" + r;\par
+\tab\tab rowElement.setAttribute("id", row);\par
+\tab\tab rowElement.setAttribute("class", "row");\par
+\tab\tab document.getElementById("registration").appendChild(rowElement);\par
+\tab\tab\par
+\tab\tab var div = document.getElementById("divtotal").innerHTML;\par
+\tab\tab if (div < 3) \{\par
+\tab\tab\tab var divcount = Number(div) + 1;\par
+\tab\tab\}\par
+\tab\tab else \{\par
+\tab\tab\tab var divcount = 1;\par
+\tab\tab\}\tab\tab\par
+\tab\tab document.getElementById("divtotal").innerHTML = divcount;\par
+\tab\tab\par
+\tab\tab var rowElement = document.createElement("DIV");\par
+\tab\tab var div = "div_r" + r + "d1";\par
+\tab\tab rowElement.setAttribute("id", div);\par
+\tab\tab rowElement.setAttribute("class", "col-sm-3");\par
+\tab\tab document.getElementById(row).appendChild(rowElement);\par
+\tab\tab\par
+\tab\tab var labelElement = document.createElement("LABEL");\par
+\tab\tab var textnode = document.createTextNode("Full Name");\par
+\tab\tab labelElement.appendChild(textnode);\par
+\tab\tab document.getElementById(div).appendChild(labelElement);\par
+\tab\tab\tab\tab\par
+\tab\tab //<input type="hidden" name="item_name_1" value="">\par
+\tab\tab var x = document.createElement("INPUT");\par
+\tab\tab var rCount = ((Number(r) * 2) - 1);\par
+\tab\tab var item_name = "item_name_" + rCount;\par
+\tab\tab x.setAttribute("type", "hidden");\par
+\tab\tab x.setAttribute("name", item_name);\tab\tab\par
+\tab\tab x.setAttribute("value", "");\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\tab\tab\par
+\tab\tab //input id="fullname1" class="form-control" type="text" name="fullname_1" maxlength="200">\par
+\tab\tab var x = document.createElement("INPUT");\par
+\tab\tab var fullname = "fullname_" + r;\par
+\tab\tab x.setAttribute("id", fullname);\par
+\tab\tab x.setAttribute("class", "form-control");\par
+\tab\tab x.setAttribute("type", "text");\par
+\tab\tab x.setAttribute("name", fullname);\par
+\tab\tab x.setAttribute("required", "");\par
+\tab\tab x.setAttribute("maxlength", "200");\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\par
+\tab\tab var rowElement = document.createElement("DIV");\par
+\tab\tab var div = "div_r" + r + "d2";\par
+\tab\tab rowElement.setAttribute("id", div);\par
+\tab\tab rowElement.setAttribute("class", "col-sm-3");\par
+\tab\tab document.getElementById(row).appendChild(rowElement);\par
+\tab\tab\par
+\tab\tab var labelElement = document.createElement("LABEL");\par
+\tab\tab var textnode = document.createTextNode("Participant Type");\par
+\tab\tab labelElement.appendChild(textnode);\par
+\tab\tab document.getElementById(div).appendChild(labelElement);\tab\tab\par
+\tab\tab\par
+\tab\tab //<input type="hidden" name="amount_1" value="">\par
+\tab\tab var x = document.createElement("INPUT");\par
+\tab\tab var amount = "amount_" + ((Number(r) * 2) - 1);\par
+\tab\tab x.setAttribute("type", "hidden");\par
+\tab\tab x.setAttribute("name", amount);\par
+\tab\tab x.setAttribute("value", "0.00");\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\tab\tab\par
+\tab\tab\par
+//************************************************************************************************//\par
+//**SELECT TAG                                                //\par
+\tab\tab var x = document.createElement("SELECT");\par
+\tab\tab var participanttype = "participanttype" + r;\par
+\tab\tab x.setAttribute("id", participanttype);\par
+\tab\tab x.setAttribute("class", "form-control");\par
+\tab\tab x.setAttribute("name", "os"+(Number(r)+1));\par
+\tab\tab x.setAttribute("value", participanttype);\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("Adult (18 & Up) $80.00 USD");\tab\tab\par
+\tab\tab x.setAttribute("value", "80.00");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(participanttype).appendChild(x);\tab\tab\tab\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("Teenager (13 & Up) $20.00");\par
+\tab\tab x.setAttribute("value", "20.00");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(participanttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("Child (12 & Under) $0.00");\par
+\tab\tab x.setAttribute("value", "0.00");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(participanttype).appendChild(x);\tab\tab\par
+//**END SELECT TAG                                              //\par
+//************************************************************************************************//\par
+\tab\tab\par
+\tab\tab var rowElement = document.createElement("DIV");\par
+\tab\tab var div = "div_r" + r + "d3";\par
+\tab\tab rowElement.setAttribute("id", div);\par
+\tab\tab rowElement.setAttribute("class", "col-sm-3");\par
+\tab\tab document.getElementById(row).appendChild(rowElement);\par
+\par
+\tab\tab //<label>T-Shirt Size</label>\par
+\tab\tab var x = document.createElement("LABEL");\par
+\tab\tab var textnode = document.createTextNode("T-Shirt Size");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\tab\tab\par
+\tab\tab var shirtHiddenElement = document.createElement("INPUT");\par
+\tab\tab var rCount = Number(r) * 2;\par
+\tab\tab var amount = "item_name_" + Number(rCount);\par
+\tab\tab shirtHiddenElement.setAttribute("type", "hidden");\par
+\tab\tab shirtHiddenElement.setAttribute("name", amount);\par
+\tab\tab shirtHiddenElement.setAttribute("value", "0.00");\par
+\tab\tab document.getElementById(div).appendChild(shirtHiddenElement);\par
+\par
+//************************************************************************************************//\par
+//**SELECT TAG (T-Shirt Sizes)\par
+\tab\tab var shirtElement = document.createElement("SELECT");\par
+\tab\tab var shirttype = "shirttype_" + r;\par
+\tab\tab shirtElement.setAttribute("id", shirttype);\par
+\tab\tab shirtElement.setAttribute("class", "form-control");\par
+\tab\tab shirtElement.setAttribute("name", "os"+(Number(r)+1));\par
+\tab\tab shirtElement.setAttribute("value", shirttype);\par
+\tab\tab document.getElementById(div).appendChild(shirtElement);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("No T-Shirt");\tab\tab\par
+\tab\tab x.setAttribute("value", "No T-Shirt");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("2T");\tab\tab\par
+\tab\tab x.setAttribute("value", "2T");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("3T");\tab\tab\par
+\tab\tab x.setAttribute("value", "3T");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("4T");\tab\tab\par
+\tab\tab x.setAttribute("value", "4T");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("YS - Youth Small");\tab\tab\par
+\tab\tab x.setAttribute("value", "YS - Youth Small");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("YM - Youth Medium");\tab\tab\par
+\tab\tab x.setAttribute("value", "YM - Youth Medium");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("YL - Youth Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "YL - Youth Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("YXL - Youth Extra Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "YXL - Youth Extra Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("AS - Adult Small");\tab\tab\par
+\tab\tab x.setAttribute("value", "AS - Adult Small");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("AM - Adult Medium");\tab\tab\par
+\tab\tab x.setAttribute("value", "AM - Adult Medium");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("AL - Adult Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "AL - Adult Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("XL - Extra Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "XL - Extra Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("2XL - Extra Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "2XL - Extra Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("3XL - Extra Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "3XL - Extra Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab var x = document.createElement("OPTION");\par
+\tab\tab var textnode = document.createTextNode("4XL - Extra Large");\tab\tab\par
+\tab\tab x.setAttribute("value", "3XL - Extra Large");\par
+\tab\tab x.appendChild(textnode);\par
+\tab\tab document.getElementById(shirttype).appendChild(x);\par
+\tab\tab\par
+\tab\tab //<input type="hidden" name="amount_2" value="">\par
+\tab\tab var x = document.createElement("INPUT");\par
+\tab\tab var amount = "amount_" + (Number(r) * 2);\par
+\tab\tab x.setAttribute("type", "hidden");\par
+\tab\tab x.setAttribute("name", amount);\par
+\tab\tab x.setAttribute("value", "0.00");\par
+\tab\tab document.getElementById(div).appendChild(x);\par
+\tab\tab\par
+\tab\par
+//**END SELECT TAG \par
+//************************************************************************************************//\par
+\par
+\tab\tab var rowElement = document.createElement("DIV");\par
+\tab\tab var div = "div_r" + r + "d4";\par
+\tab\tab rowElement.setAttribute("id", div);\par
+\tab\tab rowElement.setAttribute("class", "col-sm-3");\par
+\tab\tab document.getElementById(row).appendChild(rowElement);\par
+\tab\tab\par
+\tab\tab var labelElement = document.createElement("LABEL");\par
+\tab\tab var textnode = document.createTextNode("Delete Row");\par
+\tab\tab labelElement.appendChild(textnode);\par
+\tab\tab labelElement.setAttribute("class", "col-sm-12");\par
+\tab\tab document.getElementById(div).appendChild(labelElement);\tab\par
+\tab\tab\par
+\tab\tab var buttonElement = document.createElement("BUTTON");\par
+\tab\tab var button = "button_" + r;\par
+\tab\tab buttonElement.setAttribute("id", button);\par
+\tab\tab buttonElement.setAttribute("class", "col-sm-12 btn btn-info form-control");\par
+\tab\tab buttonElement.setAttribute("value", "Remove");\par
+\tab\tab var textnode = document.createTextNode("Remove");\par
+\tab\tab buttonElement.appendChild(textnode);\par
+\tab\tab buttonElement.setAttribute("onclick","deleteRow(this)");\par
+\tab\tab document.getElementById(div).appendChild(buttonElement);\par
+\tab\}\par
+\tab\par
+\tab function deleteRow(control) \{\par
+\tab\tab alert(control.id)\par
+\tab\tab var str = control.id;\par
+\tab\tab var len = str.length;\par
+\tab\tab var pos = str.indexOf("_");\par
+\tab\tab var row = str.substring(pos + 1, len)\par
+\tab\tab //alert(row);\par
+\tab\tab var parent = document.getElementById("registration");\par
+\tab\tab var rowRemove = "row_"+row;\par
+\tab\tab var child = document.getElementById(rowRemove);\par
+\tab\tab parent.removeChild(child);\par
+\tab\tab\par
+\tab\tab var listCount = document.getElementById("count1").innerHTML;\par
+\tab\tab\par
+\tab\tab\tab //var rowNewNumber = "row_"  + Number(row);\par
+\tab\tab\tab //document.getElementById("row_4").id = rowNewNumber;\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab // This will reorder the tag item after deletions\par
+\tab\tab for(i = Number(row); i < Number(listCount); i++)\par
+\tab\tab\{\par
+\tab\tab\tab\par
+\tab\tab\tab var rowNumber = "row_" + (Number(i) + 1);\par
+\tab\tab\tab var rowNewNumber = "row_" + Number(i);\par
+\tab\tab\tab document.getElementById(rowNumber).id = rowNewNumber;\par
+\tab\tab\tab\par
+\tab\tab\tab // Column d1\par
+\tab\tab\tab var div_rNumberd1 = "div_r" + (Number(i) + 1) + "d1";\par
+\tab\tab\tab var div_rNewNumberd1 = "div_r" + Number(i) + "d1";\par
+\tab\tab\tab document.getElementById(div_rNumberd1).id = div_rNewNumberd1;\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab var rowItemName1 = "item_name_" + (((Number(i) + 1) * 2) - 1);\par
+\tab\tab\tab var rowNewItemName1 = "item_name_" + ((Number(i) * 2) - 1);\par
+\tab\tab\tab document.getElementsByName(rowItemName1)[0].name = rowNewItemName1;\par
+\tab\tab\tab\par
+\tab\tab\tab var fullName = "fullname_" + (Number(i) + 1);\par
+\tab\tab\tab var newFullName = "fullname_" + Number(i);\par
+\tab\tab\tab document.getElementById(fullName).id = newFullName;\tab\par
+\tab\tab\tab document.getElementsByName(fullName)[0].name = newFullName;\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab // Column d2\par
+\tab\tab\tab var div_rNumberd2 = "div_r" + (Number(i) + 1) + "d2";\par
+\tab\tab\tab var div_rNewNumberd2 = "div_r" + Number(i) + "d2";\par
+\tab\tab\tab document.getElementById(div_rNumberd2).id = div_rNewNumberd2;\par
+\tab\tab\tab\par
+\tab\tab\tab var amountName = "amount_" + (((Number(i) + 1) * 2) - 1);\par
+\tab\tab\tab var newAmountName = "amount_" + ((Number(i) * 2) - 1);\par
+\tab\tab\tab document.getElementsByName(amountName)[0].name = newAmountName;\par
+\tab\tab\tab\par
+\tab\tab\tab var participanttype = "participanttype" + (Number(i) + 1);\par
+\tab\tab\tab var newParticipanttype = "participanttype" + Number(i);\par
+\tab\tab\tab document.getElementById(participanttype).id = newParticipanttype;\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab // Column d3\par
+\tab\tab\tab var div_rNumberd3 = "div_r" + (Number(i) + 1) + "d3";\par
+\tab\tab\tab var div_rNewNumberd3 = "div_r" + Number(i) + "d3";\par
+\tab\tab\tab document.getElementById(div_rNumberd3).id = div_rNewNumberd3;\par
+\tab\tab\tab\par
+\tab\tab\tab var rowItemName2 = "item_name_" + ((Number(i) + 1) * 2);\par
+\tab\tab\tab var rowNewItemName2 = "item_name_" + (Number(i) * 2);\par
+\tab\tab\tab document.getElementsByName(rowItemName2)[0].name = rowNewItemName2;\par
+\tab\tab\tab\par
+\tab\tab\tab var shirtType = "shirttype_" + (Number(i) + 1);\par
+\tab\tab\tab var newShirtType = "shirttype_" + Number(i);\par
+\tab\tab\tab var newOs = "os" + (Number(i) * 2);\par
+\tab\tab\tab document.getElementById(shirtType).id = newShirtType;\par
+\tab\tab\tab document.getElementById(newShirtType).name = newOs;\par
+\tab\tab\tab\par
+\tab\tab\tab var amountName = "amount_" + ((Number(i) + 1) * 2);\par
+\tab\tab\tab var newAmountName = "amount_" + (Number(i) * 2);\par
+\tab\tab\tab document.getElementsByName(amountName)[0].name = newAmountName;\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab // Column d4\par
+\tab\tab\tab var div_rNumberd4 = "div_r" + (Number(i) + 1) + "d4";\par
+\tab\tab\tab var div_rNewNumberd4 = "div_r" + Number(i) + "d4";\par
+\tab\tab\tab document.getElementById(div_rNumberd4).id = div_rNewNumberd4;\par
+
+\pard\ri-1080\sa200\sl276\slmult1\tab\tab\tab alert(i + " " + listCount);\par
+
+\pard\sa200\sl276\slmult1\tab\tab\tab var button = "button_" + (Number(i) + 1);\par
+\tab\tab\tab var newButton = "button_" + Number(i);\par
+\tab\tab\tab\par
+\tab\tab\tab listCount = (Number(listCount) - 1);\par
+\tab\tab\tab document.getElementById("count1").innerHTML = listCount;\par
+\tab\tab\tab\par
+\tab\tab\tab document.getElementById(button).id = newButton;\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\}\par
+\tab\}\par
+\par
+</script>\par
+
+\pard\ri-1080\sa200\sl276\slmult1 </html> \par
+}
+ 
